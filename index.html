@@ -1,0 +1,206 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<title>Page Title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<link rel="stylesheet" href="main.css" />
+	<script src="exercices.js"></script>
+	<script src="main.js"></script>
+	<link rel="shortcut icon" href="./favicon.ico">
+</head>
+
+<body class="enable-tag">
+<div data-role="page">
+	<div data-role="header" data-position="fixed">
+		<h1>Parallélogrammes et démonstrations</h1>
+		<div class="exercices" data-role="navbar">
+			<ul>
+			  <li><a>E1</a></li>
+			  <li><a>E2</a></li>
+			  <li><a>E3</a></li>
+			  <li><a>E4</a></li>
+			  <li><a>E5</a></li>
+			  <li><a>E6</a></li>
+			  <li><a>E7</a></li>
+			  <li><a>E8</a></li>
+			  <li><a>E9</a></li>
+			  <li><a>E10</a></li>
+			</ul>
+		</div>
+	</div>
+	<div role="main" class="ui-content">
+<p><ul data-role="listview" data-inset="true" >
+						<li class="exercice_title" data-role="list-divider">Exercice</li>
+						<li class="enonce"><!-- ENNONCE --></li>
+						</ul></p>
+		<div class="ui-grid-a">
+			<div class="ui-block-a">
+				<ul data-role="listview" data-inset="true" style="margin-right:15px;" >
+					<li class="redaction"><!-- REDACTION --></li>
+					<li class="verifier">
+					<div class="indications">
+					</div>
+					<button class="ui-button">Vérifier</button>		
+					<div data-role="popup" id="popup-juste">Bravo, c'est juste ! Tu peux passer à l'exercice suivant.</div>
+					<div data-role="popup" id="popup-erreur">Ce n'est pas la bonne réponse, essaie de modifier ta réponse !</div>
+					</li>
+				</ul>
+			</div>
+			<div class="ui-block-b proprietes">
+				<p>
+					<div name="p_1" data-role="collapsible" data-mini="true">
+						<h3>Propriétés des parallélogrammes</h3>
+						<p>
+							<ul data-role="listview" data-inset="true" >
+								<li name="p_d_1">
+									<span class="ui-li-count">Définition</span>
+									Un <span class="tag-parallelogramme">parallélogramme</span> est un quadrilatère qui a ses <span class="tag-cotes_opposes_paralleles">côtés opposés parallèles</span>.
+								</li>
+								<li name="p_1_2">
+									<span class="ui-li-count">Propriété</span>
+									<strong>Si</strong> un quadrilatère est un <span class="tag-parallelogramme">parallélogramme</span>, <strong>alors</strong> ses <span class="tag-cotes_opposes_meme_longueur">côtés opposés ont la même longueur</span>.
+								</li>
+								<li name="p_1_3">
+									<span class="ui-li-count">Propriété</span>
+									<strong>Si</strong> un quadrilatère est un <span class="tag-parallelogramme">parallélogramme</span>, <strong>alors</strong> ses <span class="tag-diagonales_milieu">diagonales se coupent en leur milieu</span>.
+								</li>
+								<li name="p_1_4">
+									<span class="ui-li-count">Propriété</span>
+									<strong>Si</strong> un quadrilatère est un <span class="tag-parallelogramme">parallélogramme</span>, <strong>alors</strong> ses <span class="tag-angles_opposes_meme_mesure">angles opposés ont la même mesure</span>.
+								</li>
+							</ul>
+						</p>
+					</div>
+					<div name="p_2" data-role="collapsible" data-mini="true">
+						<h3>Montrer qu'un quadrilatère est un parallélogramme</h3>
+						<p>
+							<ul data-role="listview" data-inset="true" class="drag" >
+								<li name="p_d_1">
+									<span class="ui-li-count">Définition</span>
+									Un <span class="tag-parallelogramme">parallélogramme</span> est un quadrilatère qui a ses <span class="tag-cotes_opposes_paralleles">côtés opposés parallèles</span>.
+								</li>
+								<li name="p_2_2">
+									<span class="ui-li-count">Propriété</span>
+									<strong>Si</strong> un quadrilatère a ses <span class="tag-diagonales_milieu">diagonales qui se coupent en leur milieu</span>, <strong>alors</strong> c'est un <span class="tag-parallelogramme">parallélogramme</span>.
+								</li>
+								<li name="p_2_3">
+									<span class="ui-li-count">Propriété</span>
+									<strong>Si</strong> un quadrilatère non croisé a ses <span class="tag-cotes_opposes_meme_longueur">côtés opposés de même longueur</span>, <strong>alors</strong> c'est un <span class="tag-parallelogramme">parallélogramme</span>.
+								</li>
+								<li name="p_2_4">
+									<span class="ui-li-count">Propriété</span>
+									<strong>Si</strong> un quadrilatère non croisé a <span class="tag-deux_cotes_opposes_meme_longueur">deux côtés opposés et de même longueur</span>, <strong>alors</strong> c'est un <span class="tag-parallelogramme">parallélogramme</span>.
+								</li>
+								<li name="p_2_5">
+									<span class="ui-li-count">Propriété</span>
+									<strong>Si</strong> un quadrilatère non croisé a ses <span class="tag-angles_opposes_meme_mesure">angles opposés de même mesure</span>, <strong>alors</strong> c'est un <span class="tag-parallelogramme">parallélogramme</span>.
+								</li>
+							</ul>
+						</p>
+					</div>
+					<div name="p_3" data-role="collapsible" data-mini="true">
+						<h3>Propriétés des parallélogrammes particuliers</h3>
+						<p>
+							<ul data-role="listview" data-inset="true" class="drag" >
+								<li name="p_d_2">
+									<span class="ui-li-count">Définition</span>
+									Un <span class="tag-rectangle">rectangle</span> est un quadrilatère qui a <span class="tag-quatre_angles_droits">quatre angles droits</span>.
+								</li>
+								<li name="p_3_2">
+									<span class="ui-li-count">Propriété</span>
+									<strong>Si</strong> un quadrilatère est un <span class="tag-rectangle">rectangle</span>, <strong>alors</strong> c'est aussi un <span class="tag-parallelogramme">parallelogramme</span>.
+								</li>
+								<li name="p_3_3">
+									<span class="ui-li-count">Propriété</span>
+									<strong>Si</strong> un quadrilatère est un <span class="tag-rectangle">rectangle</span>, <strong>alors</strong> ses <span class="tag-diagonales_meme_longueur">diagonales ont la même longueur</span>.
+								</li>
+								<li name="p_d_3">
+									<span class="ui-li-count">Définition</span>
+									Un <span class="tag-losange">losange</span> est un quadrilatère qui a <span class="tag-quatre_cotes_meme_longueur">quatre côtés de même longueur</span>.
+								</li>
+								<li name="p_3_5">
+									<span class="ui-li-count">Propriété</span>
+									<strong>Si</strong> un quadrilatère est un <span class="tag-losange">losange</span>, <strong>alors</strong> c'est aussi un <span class="tag-parallelogramme">parallelogramme</span>.
+								</li>
+								<li name="p_3_6">
+									<span class="ui-li-count">Propriété</span>
+									<strong>Si</strong> un quadrilatère est un <span class="tag-losange">losange</span>, <strong>alors</strong> ses <span class="tag-diagonales_perpendiculaires">diagonales se coupent perpendiculairement</span>.
+								</li>
+								<li name="p_d_4">
+									<span class="ui-li-count">Définition</span>
+									Un <span class="tag-carre">carré</span> est un quadrilatère qui a <span class="tag-quatre_cotes_meme_longueur">quatre côtés de même longueur</span> et <span class="tag-quatre_angles_droits">quatre angles droits</span>.
+								</li>
+								<li name="p_3_8">
+									<span class="ui-li-count">Propriété</span>
+									<strong>Si</strong> un quadrilatère est un <span class="tag-carre">carré</span>, <strong>alors</strong> c'est aussi un <span class="tag-parallelogramme">parallelogramme</span>.
+								</li>
+								<li name="p_3_9">
+									<span class="ui-li-count">Propriété</span>
+									<strong>Si</strong> un quadrilatère est un <span class="tag-carre">carré</span>, <strong>alors</strong> c'est aussi un <span class="tag-rectangle">rectangle</span>.
+								</li>
+								<li name="p_3_10">
+									<span class="ui-li-count">Propriété</span>
+									<strong>Si</strong> un quadrilatère est un <span class="tag-carre">carré</span>, <strong>alors</strong> c'est aussi un <span class="tag-losange">losange</span>.
+								</li>
+								<li name="p_3_11">
+									<span class="ui-li-count">Propriété</span>
+									<strong>Si</strong> un quadrilatère est un <span class="tag-carre">carré</span>, <strong>alors</strong> ses <span class="tag-diagonales_perpendiculaires">diagonales se coupent perpendiculairement</span>.
+								</li>
+								<li name="p_3_12">
+									<span class="ui-li-count">Propriété</span>
+									<strong>Si</strong> un quadrilatère est un <span class="tag-carre">carré</span>, <strong>alors</strong> ses <span class="tag-diagonales_meme_longueur">diagonales ont la même longueur</span>.
+								</li>
+							</ul>
+						</p>
+					</div>
+					<div name="p_4" data-role="collapsible" data-mini="true">
+						<h3>Montrer qu'un parallélogrammes est particulier</h3>
+						<p>
+							<ul data-role="listview" data-inset="true" class="drag" >
+								<li name="p_d_2">
+									<span class="ui-li-count">Définition</span>
+									Un <span class="tag-rectangle">rectangle</span> est un quadrilatère qui a <span class="tag-quatre_angles_droits">quatre angles droits</span>.
+								</li>
+								<li name="p_4_2">
+									<span class="ui-li-count">Propriété</span>
+									<strong>Si</strong> un <span class="tag-parallelogramme">parallélogramme</span> a ses <span class="tag-diagonales_meme_longueur">diagonales de même longueur</span>, <strong>alors</strong> c'est un <span class="tag-rectangle">rectangle</span>.
+								</li>
+								<li name="p_d_3">
+									<span class="ui-li-count">Définition</span>
+									Un <span class="tag-losange">losange</span> est un quadrilatère qui a <span class="tag-quatre_cotes_meme_longueur">quatre côtés de même longueur</span>.
+								</li>
+								<li name="p_4_4">
+									<span class="ui-li-count">Propriété</span>
+									<strong>Si</strong> un <span class="tag-parallelogramme">parallélogramme</span> a ses <span class="tag-diagonales_perpendiculaires">diagonales qui se coupent perpendiculairement</span>, <strong>alors</strong> c'est un <span class="tag-losange">losange</span>.
+								</li>
+								<li name="p_4_5">
+									<span class="ui-li-count">Propriété</span>
+									<strong>Si</strong> un <span class="tag-parallelogramme">parallélogramme</span> a <span class="tag-deux_cotes_consecutifs_meme_longueur">deux côtés consécutifs de même longueur</span>, <strong>alors</strong> c'est un <span class="tag-losange">losange</span>.
+								</li>
+								<li name="p_4_6">
+									<span class="ui-li-count">Définition</span>
+									Un <span class="tag-carre">carré</span> est un quadrilatère qui a <span class="tag-quatre_cotes_meme_longueur">quatre côtés de même longueur</span> et <span class="tag-quatre_angles_droits">quatre angles droits</span>.
+								</li>
+								<li name="p_4_7">
+									<span class="ui-li-count">Propriété</span>
+									<strong>Si</strong> un <span class="tag-parallelogramme">parallélogramme</span> a ses <span class="tag-diagonales_meme_longueur">diagonales de même longueur</span> et  <span class="tag-diagonales_perpendiculaires">ses diagonales qui se coupent perpendiculairement</span>, <strong>alors</strong> c'est un <span class="tag-carre">carré</span>.
+								</li>				
+							</ul>
+						</p>
+					</div>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<!--<div data-role="footer">
+		<h4>Page Footer</h4>-->
+	</div>
+</div>
+</body>
+</html>

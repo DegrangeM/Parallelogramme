@@ -1,0 +1,111 @@
+.exercices li {
+	width:10% !important;
+    clear: none !important;
+}
+
+.exercices .reussi {
+	background-color:#60ca4c;
+	color:white;
+}
+
+.exercices .reussi.ui-btn-active {
+	color:greenyellow !important;
+}
+
+.exercices .reussiavecerreur {
+	background-color:orange;
+	color:white;
+}
+
+.exercices .reussiavecerreur.ui-btn-active {
+	color:orange !important;
+}
+
+.placeholder {
+	display:inline-block;
+	border:1px dashed black;
+	padding:0px 5px;
+}
+
+.proprietes li {
+	padding-right:100px !important;
+	white-space: normal !important;	
+	cursor: move;
+}
+
+.enonce {
+	line-height:2em;
+	white-space: normal !important;	
+}
+
+
+.redaction {
+	white-space:normal !important;
+	line-height:2em;
+}
+
+.redaction label {
+	font-weight: normal;
+}
+
+.verifier .indications p{
+	font-size:1em !important;
+	white-space: normal !important;
+}
+#popup-juste, #popup-erreur {
+	font-size:20px;
+	padding:10px;
+	font-weight:bold;
+	text-shadow:1px 1px 1px gray;
+}
+
+#popup-juste {
+	color: greenyellow;
+}
+
+#popup-erreur {
+	color: red;
+}
+
+.enable-tag .tag-parallelogramme {
+	color: hsl(0, 50%, 50%);
+}
+.enable-tag .tag-cotes_opposes_paralleles {
+	color: hsl(30, 50%, 50%);
+}
+.enable-tag .tag-cotes_opposes_meme_longueur {
+	color: hsl(60, 50%, 50%);
+}
+.enable-tag .tag-angles_opposes_meme_mesure {
+	color: hsl(90, 50%, 50%);
+}
+.enable-tag .tag-rectangle {
+	color: hsl(120, 50%, 50%);
+}
+.enable-tag .tag-quatre_angles_droits {
+	color: hsl(150, 50%, 50%);
+}
+.enable-tag .tag-diagonales_meme_longueur {
+	color: hsl(180, 50%, 50%);
+}
+.enable-tag .tag-losange {
+	color: hsl(210, 50%, 50%);
+}
+.enable-tag .tag-quatre_cotes_meme_longueur {
+	color: hsl(240, 50%, 50%);
+}
+.enable-tag .tag-deux_cotes_consecutifs_meme_longueur {
+	color: purple;
+}
+.enable-tag .tag-diagonales_perpendiculaires {
+	color: hsl(270, 50%, 50%);
+}
+.enable-tag .tag-carre {
+	color: hsl(300, 50%, 50%);
+}
+.enable-tag .tag-diagonales_milieu {
+	color: hsl(330, 50%, 50%);
+}
+.enable-tag .tag-deux_cotes_opposes_meme_longueur {
+	color: hsl(345, 50%, 50%);
+}
