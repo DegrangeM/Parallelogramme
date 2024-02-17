@@ -175,13 +175,32 @@ $(".verifier button").click(function(){
 
 	}
 
-	
+	// Intégration MathAlea
+	const urlParams = new URLSearchParams(window.location.search)
+	const mathalea = urlParams.get('mathalea')
+	if (mathalea !== null) {
+		const numeroExercice = number(urlParams.get('numeroExercice'))
+		let score = 0;
+		let finalState = [];
+		for(let k = 0; k < 10; k++) {
+			if (localStorage.getItem('E' + k) !== null)
+			{
+				if(localStorage.getItem('E' + k) >= 0) {
+					score++;
+				}
+				finalState.push(parseInt(localStorage.getItem('E' + k)).toString());
+			} else {
+				finalState.push('');
+			}
+		}
+		finalState = finalState.join(';');
+		const message = { score, numberOfQuestions: 10, type: 'mathaleaSendScore', numeroExercice, finalState }
+      	window.parent.postMessage(message, '*')		
+	}
 
 });
 
 });
-
-
 
 function startExercice(n) {
 
@@ -325,3 +344,36 @@ function startExercice(n) {
 	});
 
 }
+
+// Intégration MathAlea
+
+window.addEventListener('message', async (event) => {
+	if (event.data.type === 'mathaleaHasScore') {
+	 let finalState = event.data.finalState;
+	 finalState = finalState.split(';');
+	 for(let k = 0; k < 10; k++) {
+		if (finalState[k] !== '') {
+			localStorage.setItem('E' + k, parseInt(finalState[k]).toString());
+		}
+	 }
+	 for(var i = 0; i< 10; i++) {
+
+		if (localStorage.getItem('E' + i)) {
+			// Les removeClass ne devraient pas être nécessaire mais on les mets au cas où ...
+			if (localStorage.getItem('E' + i) == 0) {
+				
+				$(".exercices a:eq(" + i + ")").addClass('reussi');
+				$(".exercices a:eq(" + i + ")").removeClass('reussiavecerreur');
+				
+			} else if (localStorage.getItem('E' + i) > 0) {
+				
+				$(".exercices a:eq(" + i + ")").addClass('reussiavecerreur');
+				$(".exercices a:eq(" + i + ")").removeClass('reussi');				
+			} else {
+				$(".exercices a:eq(" + i + ")").removeClass('reussiavecerreur');
+				$(".exercices a:eq(" + i + ")").removeClass('reussi');	
+			}
+		}
+	}
+	}
+});
