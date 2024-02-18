@@ -179,7 +179,7 @@ $(".verifier button").click(function(){
 	const urlParams = new URLSearchParams(window.location.search)
 	const mathalea = urlParams.get('mathalea')
 	if (mathalea !== null) {
-		const numeroExercice = number(urlParams.get('numeroExercice'))
+		const numeroExercice = parseInt(urlParams.get('numeroExercice'))
 		let score = 0;
 		let finalState = [];
 		for(let k = 0; k < 10; k++) {
