@@ -350,7 +350,7 @@ function startExercice(n) {
 window.addEventListener('message', async (event) => {
 	if (event.data.type === 'mathaleaHasScore') {
 	 let finalState = event.data.finalState;
-	 finalState = finalState.split(';');
+	 finalState = (Array.isArray(finalState) ? finalState[0] : finalState).split(';');
 	 for(let k = 0; k < 10; k++) {
 		if (finalState[k] !== '') {
 			localStorage.setItem('E' + k, parseInt(finalState[k]).toString());
