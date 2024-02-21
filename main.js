@@ -346,34 +346,39 @@ function startExercice(n) {
 }
 
 // Intégration MathAlea
-
-window.addEventListener('message', async (event) => {
-	if (event.data.type === 'mathaleaHasScore') {
-	 let finalState = event.data.finalState;
-	 finalState = (Array.isArray(finalState) ? finalState[0] : finalState).split(';');
-	 for(let k = 0; k < 10; k++) {
-		if (finalState[k] !== '') {
-			localStorage.setItem('E' + k, parseInt(finalState[k]).toString());
-		}
-	 }
-	 for(var i = 0; i< 10; i++) {
-
-		if (localStorage.getItem('E' + i)) {
-			// Les removeClass ne devraient pas être nécessaire mais on les mets au cas où ...
-			if (localStorage.getItem('E' + i) == 0) {
-				
-				$(".exercices a:eq(" + i + ")").addClass('reussi');
-				$(".exercices a:eq(" + i + ")").removeClass('reussiavecerreur');
-				
-			} else if (localStorage.getItem('E' + i) > 0) {
-				
-				$(".exercices a:eq(" + i + ")").addClass('reussiavecerreur');
-				$(".exercices a:eq(" + i + ")").removeClass('reussi');				
-			} else {
-				$(".exercices a:eq(" + i + ")").removeClass('reussiavecerreur');
-				$(".exercices a:eq(" + i + ")").removeClass('reussi');	
+const urlParams = new URLSearchParams(window.location.search)
+const mathalea = urlParams.get('mathalea')
+if (mathalea !== null) {
+	const numeroExercice = parseInt(urlParams.get('numeroExercice'))
+	window.addEventListener('message', async (event) => {
+		if (event.data.type === 'mathaleaHasScore') {
+		let finalState = event.data.finalState;
+		finalState = (Array.isArray(finalState) ? finalState[0] : finalState).split(';');
+		for(let k = 0; k < 10; k++) {
+			if (finalState[k] !== '') {
+				localStorage.setItem('E' + k, parseInt(finalState[k]).toString());
 			}
 		}
-	}
-	}
-});
+		for(var i = 0; i< 10; i++) {
+
+			if (localStorage.getItem('E' + i)) {
+				// Les removeClass ne devraient pas être nécessaire mais on les mets au cas où ...
+				if (localStorage.getItem('E' + i) == 0) {
+					
+					$(".exercices a:eq(" + i + ")").addClass('reussi');
+					$(".exercices a:eq(" + i + ")").removeClass('reussiavecerreur');
+					
+				} else if (localStorage.getItem('E' + i) > 0) {
+					
+					$(".exercices a:eq(" + i + ")").addClass('reussiavecerreur');
+					$(".exercices a:eq(" + i + ")").removeClass('reussi');				
+				} else {
+					$(".exercices a:eq(" + i + ")").removeClass('reussiavecerreur');
+					$(".exercices a:eq(" + i + ")").removeClass('reussi');	
+				}
+			}
+		}
+		}
+	});
+	window.parent.postMessage({type: 'mathaleaAskScore', numeroExercice}, '*');
+}
