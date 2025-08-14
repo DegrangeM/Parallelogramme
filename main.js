@@ -154,6 +154,10 @@ $(".verifier button").click(function(){
 
 	} else {
 
+		if (['E0', 'E1', 'E2', 'E3', 'E4', 'E5', 'E6', 'E7', 'E8', 'E9'].map(x=>localStorage[x]>=0).every(x=>x)) {
+			$("#popup-juste").text('Bravo, tu as réussi à finir tous les exercices !');
+		}
+		
 		$("#popup-juste").popup('open');
 
 		if (localStorage.getItem('E' + n) != null) {
